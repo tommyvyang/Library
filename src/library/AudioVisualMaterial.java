@@ -8,7 +8,7 @@ package library;
 
 /**
  *
- * @author Tommy
+ * @author Kou Xiong
  */
 public class AudioVisualMaterial {
     
