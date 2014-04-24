@@ -10,7 +10,7 @@ package library;
  *
  * @author Tommy Yang
  */
-public class LibraryMaterial {
+public abstract class LibraryMaterial {
     
     private String bookAuthor;
     private String bookTitle;
@@ -70,10 +70,8 @@ public class LibraryMaterial {
     }
     
     /**
-     * 
+     *  
      */
-    public void displayInfo() {
-        
-    }
+    abstract void displayInfo();
     
 }
