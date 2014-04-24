@@ -70,6 +70,34 @@ public abstract class LibraryMaterial {
     }
     
     /**
+     * 
+     */
+    public void setAuthor() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void setTitle() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void setYear() {
+        
+    }
+    
+    /**
+     * 
+     */
+    public void setPrice() {
+        
+    }
+    
+    /**
      *  
      */
     abstract void displayInfo();
