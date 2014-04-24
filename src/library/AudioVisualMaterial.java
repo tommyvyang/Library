@@ -14,7 +14,7 @@ import java.awt.Image;
  *
  * @author Kou Xiong
  */
-public class AudioVisualMaterial
+public class AudioVisualMaterial extends LibraryMaterial
 {
     
     protected String avType;
