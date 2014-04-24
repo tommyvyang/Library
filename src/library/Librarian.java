@@ -6,12 +6,31 @@
 
 package library;
 
+import java.applet.AudioClip;
+import java.awt.Image;
+
 /**
  *
  * @author Tommy
  */
 public class Librarian extends javax.swing.JFrame {
 
+    // test class by Kou
+    Image[] avImage;
+    AudioClip[] avAud;
+    AudioVisualMaterial[] avMat = new AudioVisualMaterial[3];
+    int[] intMaterial = new int[3];
+    
+    public void testClassMethod()
+    {
+      for (int i : intMaterial)
+      {
+        avMat[i] = new AudioVisualMaterial("DVD", avImage[i], avAud[i] );
+      }
+      
+    }
+    // end of test class. delete whenever.
+    
     /**
      * Creates new form Librarian
      */
