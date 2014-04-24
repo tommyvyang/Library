@@ -28,12 +28,13 @@ public class Librarian extends javax.swing.JFrame {
     // <editor-fold defaultstate="collapsed" desc="Generated Code">//GEN-BEGIN:initComponents
     private void initComponents() {
 
+        categoryGroup = new javax.swing.ButtonGroup();
         jComboBox1 = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
-        jRadioButton1 = new javax.swing.JRadioButton();
-        jRadioButton2 = new javax.swing.JRadioButton();
-        jRadioButton3 = new javax.swing.JRadioButton();
+        bookRadio = new javax.swing.JRadioButton();
+        dvdRadio = new javax.swing.JRadioButton();
+        cdRadio = new javax.swing.JRadioButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
 
@@ -43,11 +44,14 @@ public class Librarian extends javax.swing.JFrame {
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
-        jRadioButton1.setText("Books");
+        categoryGroup.add(bookRadio);
+        bookRadio.setText("Books");
 
-        jRadioButton2.setText("DVDs");
+        categoryGroup.add(dvdRadio);
+        dvdRadio.setText("DVDs");
 
-        jRadioButton3.setText("CDs");
+        categoryGroup.add(cdRadio);
+        cdRadio.setText("CDs");
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -58,11 +62,11 @@ public class Librarian extends javax.swing.JFrame {
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
                     .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
-                        .addComponent(jRadioButton1)
+                        .addComponent(bookRadio)
                         .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
-                        .addComponent(jRadioButton2)
+                        .addComponent(dvdRadio)
                         .addGap(38, 38, 38)
-                        .addComponent(jRadioButton3))
+                        .addComponent(cdRadio))
                     .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
                 .addContainerGap(511, Short.MAX_VALUE))
         );
@@ -71,9 +75,9 @@ public class Librarian extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(jRadioButton1)
-                    .addComponent(jRadioButton2)
-                    .addComponent(jRadioButton3))
+                    .addComponent(bookRadio)
+                    .addComponent(dvdRadio)
+                    .addComponent(cdRadio))
                 .addGap(18, 18, 18)
                 .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(18, 18, 18)
@@ -120,10 +124,11 @@ public class Librarian extends javax.swing.JFrame {
     }
 
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JRadioButton bookRadio;
+    private javax.swing.ButtonGroup categoryGroup;
+    private javax.swing.JRadioButton cdRadio;
+    private javax.swing.JRadioButton dvdRadio;
     private javax.swing.JComboBox jComboBox1;
-    private javax.swing.JRadioButton jRadioButton1;
-    private javax.swing.JRadioButton jRadioButton2;
-    private javax.swing.JRadioButton jRadioButton3;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
