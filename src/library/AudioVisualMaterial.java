@@ -102,7 +102,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     @Override
     public void displayInfo ()
     {
-        
+        // displays the information
     }
     
 }
