@@ -69,6 +69,8 @@ public class LibraryMaterial {
         return publicationYear;
     }
     
-    
+    public void displayInfo() {
+        
+    }
     
 }
