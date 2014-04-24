@@ -99,6 +99,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     /**
      * Displays the audio and visual material info.
      */
+    @Override
     public void displayInfo ()
     {
         
