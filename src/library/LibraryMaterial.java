@@ -71,29 +71,33 @@ public abstract class LibraryMaterial {
     
     /**
      * 
+     * @param author
      */
-    public void setAuthor() {
+    public void setAuthor(String author) {
         
     }
     
     /**
      * 
+     * @param title
      */
-    public void setTitle() {
+    public void setTitle(String title) {
         
     }
     
     /**
      * 
+     * @param year
      */
-    public void setYear() {
+    public void setYear(int year) {
         
     }
     
     /**
      * 
+     * @param price
      */
-    public void setPrice() {
+    public void setPrice(double price) {
         
     }
     
