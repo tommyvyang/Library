@@ -49,8 +49,6 @@ public class Book extends LibraryMaterial{
      */
     public void displayInfo()
     {
-        
-
     }
     /**
      * Gets book type
@@ -84,7 +82,7 @@ public class Book extends LibraryMaterial{
      * Sets book edition
      * @param bkEdition 
      */
-    private void setbkEdition(int bkEdition)
+    public void setbkEdition(int bkEdition)
     {
         printEdit = bkEdition;
     }
@@ -93,7 +91,7 @@ public class Book extends LibraryMaterial{
      * Gets book page number
      * @return numPage
      */
-    private int getbkPage()
+    public int getbkPage()
     {
         return numPage;
     }
