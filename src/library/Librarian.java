@@ -50,14 +50,14 @@ public class Librarian extends javax.swing.JFrame {
         categoryGroup = new javax.swing.ButtonGroup();
         itemList = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
-        jTextArea1 = new javax.swing.JTextArea();
+        infoArea = new javax.swing.JTextArea();
         bookRadio = new javax.swing.JRadioButton();
         dvdRadio = new javax.swing.JRadioButton();
         cdRadio = new javax.swing.JRadioButton();
         jPanel1 = new javax.swing.JPanel();
+        exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
-        setBackground(new java.awt.Color(100, 200, 200));
 
         itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Category" }));
         itemList.addActionListener(new java.awt.event.ActionListener() {
@@ -66,10 +66,10 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
 
-        jTextArea1.setEditable(false);
-        jTextArea1.setColumns(20);
-        jTextArea1.setRows(5);
-        jScrollPane1.setViewportView(jTextArea1);
+        infoArea.setEditable(false);
+        infoArea.setColumns(20);
+        infoArea.setRows(5);
+        jScrollPane1.setViewportView(infoArea);
 
         categoryGroup.add(bookRadio);
         bookRadio.setText("Books");
@@ -95,8 +95,6 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
 
-        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
-
         javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
         jPanel1.setLayout(jPanel1Layout);
         jPanel1Layout.setHorizontalGroup(
@@ -107,6 +105,13 @@ public class Librarian extends javax.swing.JFrame {
             jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGap(0, 400, Short.MAX_VALUE)
         );
+
+        exitButton.setText("Exit");
+        exitButton.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                exitButtonActionPerformed(evt);
+            }
+        });
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -123,9 +128,13 @@ public class Librarian extends javax.swing.JFrame {
                         .addGap(38, 38, 38)
                         .addComponent(cdRadio))
                     .addComponent(itemList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
                 .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
+            .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
+                .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
+                .addComponent(exitButton)
+                .addContainerGap())
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
@@ -142,14 +151,32 @@ public class Librarian extends javax.swing.JFrame {
                         .addComponent(itemList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addContainerGap(43, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addComponent(exitButton)
+                .addContainerGap())
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
-        // TODO add your handling code here:
+        if(dvdRadio.isSelected() == true) {
+            switch(itemList.getSelectedIndex()) {
+                case 0: 
+                    infoArea.setText(""); 
+                    break;
+                case 1: 
+                    infoArea.setText("Testing 1"); 
+                    break;
+                case 2: 
+                    infoArea.setText("Testing 2"); 
+                    break;
+                case 3: 
+                    infoArea.setText("Testing 3"); 
+                    break;
+                default: 
+            }
+        }
     }//GEN-LAST:event_itemListActionPerformed
 
     private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
@@ -163,6 +190,10 @@ public class Librarian extends javax.swing.JFrame {
     private void cdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdRadioActionPerformed
         itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a CD", "CD 1", "CD 2", "CD 3" }));
     }//GEN-LAST:event_cdRadioActionPerformed
+
+    private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
+        System.exit(0);
+    }//GEN-LAST:event_exitButtonActionPerformed
 
     /**
      * @param args the command line arguments
@@ -205,9 +236,10 @@ public class Librarian extends javax.swing.JFrame {
     private javax.swing.ButtonGroup categoryGroup;
     private javax.swing.JRadioButton cdRadio;
     private javax.swing.JRadioButton dvdRadio;
+    private javax.swing.JButton exitButton;
+    private javax.swing.JTextArea infoArea;
     private javax.swing.JComboBox itemList;
     private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
-    private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
 }
