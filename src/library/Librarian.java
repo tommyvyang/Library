@@ -48,29 +48,65 @@ public class Librarian extends javax.swing.JFrame {
     private void initComponents() {
 
         categoryGroup = new javax.swing.ButtonGroup();
-        jComboBox1 = new javax.swing.JComboBox();
+        itemList = new javax.swing.JComboBox();
         jScrollPane1 = new javax.swing.JScrollPane();
         jTextArea1 = new javax.swing.JTextArea();
         bookRadio = new javax.swing.JRadioButton();
         dvdRadio = new javax.swing.JRadioButton();
         cdRadio = new javax.swing.JRadioButton();
+        jPanel1 = new javax.swing.JPanel();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
+        setBackground(new java.awt.Color(100, 200, 200));
 
-        jComboBox1.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Item 1", "Item 2", "Item 3", "Item 4" }));
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Category" }));
+        itemList.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                itemListActionPerformed(evt);
+            }
+        });
 
+        jTextArea1.setEditable(false);
         jTextArea1.setColumns(20);
         jTextArea1.setRows(5);
         jScrollPane1.setViewportView(jTextArea1);
 
         categoryGroup.add(bookRadio);
         bookRadio.setText("Books");
+        bookRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                bookRadioActionPerformed(evt);
+            }
+        });
 
         categoryGroup.add(dvdRadio);
         dvdRadio.setText("DVDs");
+        dvdRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                dvdRadioActionPerformed(evt);
+            }
+        });
 
         categoryGroup.add(cdRadio);
         cdRadio.setText("CDs");
+        cdRadio.addActionListener(new java.awt.event.ActionListener() {
+            public void actionPerformed(java.awt.event.ActionEvent evt) {
+                cdRadioActionPerformed(evt);
+            }
+        });
+
+        jPanel1.setBorder(javax.swing.BorderFactory.createEtchedBorder());
+
+        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
+        jPanel1.setLayout(jPanel1Layout);
+        jPanel1Layout.setHorizontalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 300, Short.MAX_VALUE)
+        );
+        jPanel1Layout.setVerticalGroup(
+            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addGap(0, 400, Short.MAX_VALUE)
+        );
 
         javax.swing.GroupLayout layout = new javax.swing.GroupLayout(getContentPane());
         getContentPane().setLayout(layout);
@@ -86,26 +122,47 @@ public class Librarian extends javax.swing.JFrame {
                         .addComponent(dvdRadio)
                         .addGap(38, 38, 38)
                         .addComponent(cdRadio))
-                    .addComponent(jComboBox1, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addContainerGap(511, Short.MAX_VALUE))
+                    .addComponent(itemList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 152, Short.MAX_VALUE)
+                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addGap(77, 77, 77))
         );
         layout.setVerticalGroup(
             layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
-                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
-                    .addComponent(bookRadio)
-                    .addComponent(dvdRadio)
-                    .addComponent(cdRadio))
-                .addGap(18, 18, 18)
-                .addComponent(jComboBox1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addGap(18, 18, 18)
-                .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)
-                .addContainerGap(64, Short.MAX_VALUE))
+                .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addGroup(layout.createSequentialGroup()
+                        .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
+                            .addComponent(bookRadio)
+                            .addComponent(dvdRadio)
+                            .addComponent(cdRadio))
+                        .addGap(18, 18, 18)
+                        .addComponent(itemList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                        .addGap(18, 18, 18)
+                        .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
+                .addContainerGap(43, Short.MAX_VALUE))
         );
 
         pack();
     }// </editor-fold>//GEN-END:initComponents
+
+    private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_itemListActionPerformed
+
+    private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Book 1", "Book 2", "Book 3" }));
+    }//GEN-LAST:event_bookRadioActionPerformed
+
+    private void dvdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dvdRadioActionPerformed
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a DVD", "Monsters University", "The Avengers", "The Great Gatsby" }));
+    }//GEN-LAST:event_dvdRadioActionPerformed
+
+    private void cdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdRadioActionPerformed
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a CD", "CD 1", "CD 2", "CD 3" }));
+    }//GEN-LAST:event_cdRadioActionPerformed
 
     /**
      * @param args the command line arguments
@@ -136,6 +193,7 @@ public class Librarian extends javax.swing.JFrame {
 
         /* Create and display the form */
         java.awt.EventQueue.invokeLater(new Runnable() {
+            @Override
             public void run() {
                 new Librarian().setVisible(true);
             }
@@ -147,7 +205,8 @@ public class Librarian extends javax.swing.JFrame {
     private javax.swing.ButtonGroup categoryGroup;
     private javax.swing.JRadioButton cdRadio;
     private javax.swing.JRadioButton dvdRadio;
-    private javax.swing.JComboBox jComboBox1;
+    private javax.swing.JComboBox itemList;
+    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     private javax.swing.JTextArea jTextArea1;
     // End of variables declaration//GEN-END:variables
