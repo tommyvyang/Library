@@ -179,18 +179,34 @@ public class Librarian extends javax.swing.JFrame {
         }
     }//GEN-LAST:event_itemListActionPerformed
 
+    /**
+     * Changes list to books
+     * @param evt the event
+     */
     private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
         itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Book 1", "Book 2", "Book 3" }));
     }//GEN-LAST:event_bookRadioActionPerformed
 
+    /**
+     * Changes list to DVDs
+     * @param evt the event
+     */
     private void dvdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_dvdRadioActionPerformed
         itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a DVD", "Monsters University", "The Avengers", "The Great Gatsby" }));
     }//GEN-LAST:event_dvdRadioActionPerformed
 
+    /**
+     * Changes list to CDs
+     * @param evt the event
+     */
     private void cdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdRadioActionPerformed
         itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a CD", "CD 1", "CD 2", "CD 3" }));
     }//GEN-LAST:event_cdRadioActionPerformed
 
+    /**
+     * Exits application when exit button is clicked
+     * @param evt The event
+     */
     private void exitButtonActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_exitButtonActionPerformed
         System.exit(0);
     }//GEN-LAST:event_exitButtonActionPerformed
