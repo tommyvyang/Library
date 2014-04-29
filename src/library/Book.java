@@ -47,8 +47,10 @@ public class Book extends LibraryMaterial{
     /**
      * Displays the information about the book
      */
-    public void displayInfo()
+    @Override
+    public String displayInfo()
     {
+        return null;
     }
     /**
      * Gets book type

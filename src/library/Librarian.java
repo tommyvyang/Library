@@ -16,19 +16,19 @@ import java.awt.Image;
 public class Librarian extends javax.swing.JFrame {
 
     // test class by Kou
-    Image[] avImage;
-    AudioClip[] avAud;
-    AudioVisualMaterial[] avMat = new AudioVisualMaterial[3];
-    int[] intMaterial = new int[3];
+//    Image avImage;
+//    AudioClip avAud;
+//    AudioVisualMaterial monUni = new AudioVisualMaterial("DVD", avImage, avAud);
+//    int[] intMaterial = new int[3];
     
-    public void testClassMethod()
-    {
-      for (int i : intMaterial)
-      {
-        avMat[i] = new AudioVisualMaterial("DVD", avImage[i], avAud[i] );
-      }
+//    public void testClassMethod()
+//    {
+//      for (int i : intMaterial)
+//      {
+//        avMat[i] = new AudioVisualMaterial("DVD", avImage[i], avAud[i] );
+//      }
       
-    }
+//    }
     // end of test class. delete whenever.
     
     /**
@@ -166,13 +166,25 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText(""); 
                     break;
                 case 1: 
-                    infoArea.setText("Testing 1"); 
+                    AudioVisualMaterial monUni = new AudioVisualMaterial();
+                    monUni.setTitle("Monsters University");
+                    monUni.setAuthor("Pixar");
+                    monUni.setYear(2013);
+                    infoArea.setText(monUni.displayInfo()); 
                     break;
                 case 2: 
-                    infoArea.setText("Testing 2"); 
+                    AudioVisualMaterial theAven = new AudioVisualMaterial();
+                    theAven.setTitle("The Avengers");
+                    theAven.setAuthor("Marvel");
+                    theAven.setYear(2012);
+                    infoArea.setText(theAven.displayInfo()); 
                     break;
                 case 3: 
-                    infoArea.setText("Testing 3"); 
+                    AudioVisualMaterial theGG = new AudioVisualMaterial();
+                    theGG.setTitle("The Great Gatsby");
+                    theGG.setAuthor("");
+                    theGG.setYear(2013);
+                    infoArea.setText(theGG.displayInfo());
                     break;
                 default: 
             }

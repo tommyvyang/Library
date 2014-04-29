@@ -100,9 +100,9 @@ public class AudioVisualMaterial extends LibraryMaterial
      * Displays the audio and visual material info.
      */
     @Override
-    public void displayInfo ()
+    public String displayInfo ()
     {
-        // displays the information
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " + getYear());
     }
     
 }

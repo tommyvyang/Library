@@ -74,7 +74,7 @@ public abstract class LibraryMaterial {
      * @param author
      */
     public void setAuthor(String author) {
-        
+        bookAuthor = author;
     }
     
     /**
@@ -82,7 +82,7 @@ public abstract class LibraryMaterial {
      * @param title
      */
     public void setTitle(String title) {
-        
+        bookTitle = title;
     }
     
     /**
@@ -90,7 +90,7 @@ public abstract class LibraryMaterial {
      * @param year
      */
     public void setYear(int year) {
-        
+        publicationYear = year;
     }
     
     /**
@@ -98,12 +98,15 @@ public abstract class LibraryMaterial {
      * @param price
      */
     public void setPrice(double price) {
-        
+        bookPrice = price;
     }
     
     /**
      *  
+     * @return 
      */
-    abstract void displayInfo();
+    public String displayInfo() {
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor());
+    }
     
 }
