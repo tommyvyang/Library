@@ -6,6 +6,9 @@
 
 package library;
 
+import java.applet.AudioClip;
+import javax.sound.sampled.Clip;
+
 /**
  *
  * @author Tommy Yang
@@ -19,6 +22,7 @@ public abstract class LibraryMaterial {
     private String bookType;
     private int printEdit;
     private int numPage;
+    private Clip avSound;
     
     /**
      * Default Constructor
@@ -35,8 +39,9 @@ public abstract class LibraryMaterial {
      * @param bType
      * @param nPage
      * @param pEdit
+     * @param _avSound
      */
-    public LibraryMaterial(String author, String title, double price, int year, String bType, int nPage, int pEdit ) {
+    public LibraryMaterial(String author, String title, double price, int year, String bType, int nPage, int pEdit, Clip _avSound ) {
         author = bookAuthor;
         title = bookTitle;
         price = bookPrice;
@@ -44,6 +49,7 @@ public abstract class LibraryMaterial {
         bookType = bType;
         numPage = nPage;
         printEdit = pEdit;
+        avSound = _avSound;
     }
     
     /**
@@ -164,6 +170,19 @@ public abstract class LibraryMaterial {
     public void setbkPage(int bkPage)
     {
         numPage = bkPage;
+    }
+    public void playSound ()
+    {
+        avSound.start();
+    }
+    
+    /**
+     * Sets the sound of the audio and visual material.
+     * @param _sound the sound clip
+     */
+    public void setSound (Clip _sound)
+    {
+        avSound = _sound;
     }
     public String displayInfo() {
         return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " +  getYear() + "\n\nBook Edition: " + getbkEdition() + "\n\nBook Type: " + getbkType()+

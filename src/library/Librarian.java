@@ -8,6 +8,12 @@ package library;
 
 import java.applet.AudioClip;
 import java.awt.Image;
+import java.io.File;
+import javax.sound.sampled.AudioFormat;
+import javax.sound.sampled.AudioInputStream;
+import javax.sound.sampled.AudioSystem;
+import javax.sound.sampled.Clip;
+import javax.sound.sampled.DataLine;
 
 /**
  *
@@ -163,9 +169,19 @@ public class Librarian extends javax.swing.JFrame {
         LibraryMaterial texas = new Book();
         LibraryMaterial hP = new Book();
         LibraryMaterial eld = new Book();
-        AudioVisualMaterial monUni = new AudioVisualMaterial();
-        AudioVisualMaterial theAven = new AudioVisualMaterial();
-        AudioVisualMaterial theGG = new AudioVisualMaterial();
+        LibraryMaterial monUni = new AudioVisualMaterial();
+        LibraryMaterial theAven = new AudioVisualMaterial();
+        LibraryMaterial theGG = new AudioVisualMaterial();
+        LibraryMaterial light = new AudioVisualMaterial();
+        LibraryMaterial jukebox = new AudioVisualMaterial();
+        LibraryMaterial jane = new AudioVisualMaterial();
+        
+        File jM, bM, m5;
+            AudioInputStream stream;
+            AudioFormat format;
+            DataLine.Info info;
+            Clip johnM,bruno,maroon;
+            
         
         if(bookRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()){
@@ -239,17 +255,58 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText("");
                     break;
                 case 1:
-                    
-                    
+                    light.setTitle("Where The Light Is");
+                    light.setAuthor("John Mayer");
+                    light.setYear(2008);
+                    infoArea.setText(light.displayInfo());
+                    try {
+                        stream = AudioSystem.getAudioInputStream(new File("src//library//Bold As Love.wav"));
+                        format = stream.getFormat();
+                        info = new DataLine.Info(Clip.class, format);
+                        johnM = (Clip) AudioSystem.getLine(info);
+                        johnM.open(stream);
+                        light.setSound(johnM);
+                        }
+                    catch (Exception e) {
+                            System.out.println("here");
+                        }
+                    light.playSound();
                     break;
                 case 2:
-                    
+                    jukebox.setTitle("Unorthodox Jukebox");
+                    jukebox.setAuthor("Bruno Mars");
+                    jukebox.setYear(2012);
+                    infoArea.setText(jukebox.displayInfo());
+                    try {
+                        stream = AudioSystem.getAudioInputStream(new File("src//library//Locked Out Of Heaven.wav"));
+                        format = stream.getFormat();
+                        info = new DataLine.Info(Clip.class, format);
+                        bruno = (Clip) AudioSystem.getLine(info);
+                        bruno.open(stream);
+                        jukebox.setSound(bruno);
+                        }
+                    catch (Exception e) {
+                            System.out.println("here");
+                        }
+                    jukebox.playSound();
                     break;
                 case 3:
-                    
-                    break;
-                case 4:
-                    
+                    jane.setTitle("Songs About Jane");
+                    jane.setAuthor("Maroon 5");
+                    jane.setYear(2002);
+                    infoArea.setText(jane.displayInfo());
+                    try {
+                        stream = AudioSystem.getAudioInputStream(new File("src//library//Sunday Morning.wav"));
+                        format = stream.getFormat();
+                        info = new DataLine.Info(Clip.class, format);
+                        maroon = (Clip) AudioSystem.getLine(info);
+                        maroon.open(stream);
+                        jane.setSound(maroon);
+                        }
+                    catch (Exception e) {
+                            System.out.println("here");
+                        }
+                    jane.playSound();
                     break;
                 default:
             }
@@ -277,7 +334,7 @@ public class Librarian extends javax.swing.JFrame {
      * @param evt the event
      */
     private void cdRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_cdRadioActionPerformed
-        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a CD", "CD 1", "CD 2", "CD 3" }));
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a CD", "Where The Light Is", "Unorthodox Jukebox", "Songs About Jane" }));
     }//GEN-LAST:event_cdRadioActionPerformed
 
     /**

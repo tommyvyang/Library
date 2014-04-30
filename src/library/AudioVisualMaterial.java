@@ -8,6 +8,7 @@ package library;
 
 import java.applet.AudioClip;
 import java.awt.Image;
+import javax.sound.sampled.Clip;
 
 /**
  * Audio and visual material Class
@@ -19,7 +20,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     
     protected String avType;
     protected Image avCover;
-    protected AudioClip avSound;
+    protected Clip avSound;
     
     /**
      * Default audio and visual material constructor.
@@ -36,7 +37,7 @@ public class AudioVisualMaterial extends LibraryMaterial
      * @param _avCover AudioVisual cover
      * @param _avSound AudioVisual sound clip
      */
-    public AudioVisualMaterial (String _avType, Image _avCover, AudioClip _avSound)
+    public AudioVisualMaterial (String _avType, Image _avCover, Clip _avSound)
     {
         avType = _avType;
         avCover = _avCover;
@@ -62,7 +63,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     }
     
     /**
-     * Displays the audio and visual material's cover. 
+     * Displays the audio and visual materials cover. 
      * @return an image of the audio and visual material
      */
     public Image displayCover ()
@@ -82,16 +83,18 @@ public class AudioVisualMaterial extends LibraryMaterial
     /**
      * Plays the audio and visual material sound clip.
      */
+    @Override
     public void playSound ()
     {
-        avSound.play();
+        avSound.start();
     }
     
     /**
      * Sets the sound of the audio and visual material.
      * @param _sound the sound clip
      */
-    public void setSound (AudioClip _sound)
+    @Override
+    public void setSound (Clip _sound)
     {
         avSound = _sound;
     }
