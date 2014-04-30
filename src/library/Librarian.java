@@ -160,6 +160,24 @@ public class Librarian extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
+        if(bookRadio.isSelected() == true) {
+            switch(itemList.getSelectedIndex()){
+                case 0:
+                    infoArea.setText("");
+                    break;
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                default:
+            }
+        }
+        
         if(dvdRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()) {
                 case 0: 
@@ -187,6 +205,27 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText(theGG.displayInfo());
                     break;
                 default: 
+            }
+        }
+        
+        if(cdRadio.isSelected() == true){
+            switch(itemList.getSelectedIndex()){
+                case 0:
+                    infoArea.setText("");
+                    break;
+                case 1:
+                    
+                    break;
+                case 2:
+                    
+                    break;
+                case 3:
+                    
+                    break;
+                case 4:
+                    
+                    break;
+                default:
             }
         }
     }//GEN-LAST:event_itemListActionPerformed
