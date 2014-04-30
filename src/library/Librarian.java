@@ -166,7 +166,15 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText("");
                     break;
                 case 1:
-                    
+                    LibraryMaterial texas = new Book();
+                    texas.setTitle("Texas Homeowners Association Law");
+                    texas.setAuthor("Gregory S. Cagle");
+                    texas.setYear(2013);
+                    texas.setbkEdition(2);
+                    texas.setbkType("PaperBack");
+                    texas.setbkPage(822);
+                    texas.setPrice(37.74);                   
+                    infoArea.setText(texas.displayInfo());
                     break;
                 case 2:
                     
@@ -235,7 +243,7 @@ public class Librarian extends javax.swing.JFrame {
      * @param evt the event
      */
     private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
-        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Book 1", "Book 2", "Book 3" }));
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Texas Home Owners", "Book 2", "Book 3" }));
     }//GEN-LAST:event_bookRadioActionPerformed
 
     /**
