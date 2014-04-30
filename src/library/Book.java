@@ -43,19 +43,12 @@ public class Book extends LibraryMaterial{
     {
         
     }
-    
-    /**
-     * Displays the information about the book
-     */
-    @Override
-    public String displayInfo()
-    {
-        return null;
-    }
+
     /**
      * Gets book type
      * @return bookType
      */
+    @Override
     public String getbkType()
     {
         return bookType;
@@ -65,6 +58,7 @@ public class Book extends LibraryMaterial{
      * Sets book type
      * @param bkType 
      */
+    @Override
     public void setbkType(String bkType)
     {
         bookType = bkType;
@@ -74,6 +68,7 @@ public class Book extends LibraryMaterial{
      * Gets book edition
      * @return printEdit
      */
+    @Override
     public int getbkEdition()
     {
         return printEdit;
@@ -84,6 +79,7 @@ public class Book extends LibraryMaterial{
      * Sets book edition
      * @param bkEdition 
      */
+    @Override
     public void setbkEdition(int bkEdition)
     {
         printEdit = bkEdition;
@@ -93,6 +89,7 @@ public class Book extends LibraryMaterial{
      * Gets book page number
      * @return numPage
      */
+    @Override
     public int getbkPage()
     {
         return numPage;
@@ -102,6 +99,7 @@ public class Book extends LibraryMaterial{
      * Sets book page number
      * @param bkPage 
      */
+    @Override
     public void setbkPage(int bkPage)
     {
         numPage = bkPage;

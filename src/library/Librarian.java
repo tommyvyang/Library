@@ -160,27 +160,47 @@ public class Librarian extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
+        LibraryMaterial texas = new Book();
+        LibraryMaterial hP = new Book();
+        LibraryMaterial eld = new Book();
+        AudioVisualMaterial monUni = new AudioVisualMaterial();
+        AudioVisualMaterial theAven = new AudioVisualMaterial();
+        AudioVisualMaterial theGG = new AudioVisualMaterial();
+        
         if(bookRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()){
                 case 0:
                     infoArea.setText("");
                     break;
                 case 1:
-                    LibraryMaterial texas = new Book();
                     texas.setTitle("Texas Homeowners Association Law");
                     texas.setAuthor("Gregory S. Cagle");
                     texas.setYear(2013);
                     texas.setbkEdition(2);
-                    texas.setbkType("PaperBack");
+                    texas.setbkType("Paperback");
                     texas.setbkPage(822);
                     texas.setPrice(37.74);                   
                     infoArea.setText(texas.displayInfo());
                     break;
                 case 2:
-                    
+                    hP.setTitle("Harry Potter and the Sorcerer's Stone");
+                    hP.setAuthor("J.K. Rowling");
+                    hP.setYear(1999);
+                    hP.setbkEdition(1);
+                    hP.setbkType("Paperback");
+                    hP.setbkPage(320);
+                    hP.setPrice(6.59);
+                    infoArea.setText(hP.displayInfo());
                     break;
                 case 3:
-                    
+                    eld.setTitle("Eldest");
+                    eld.setAuthor("Christopher Paolini");
+                    eld.setYear(2005);
+                    eld.setbkEdition(3);
+                    eld.setbkType("Hardcover");
+                    eld.setbkPage(704);
+                    eld.setPrice(16.72);
+                    infoArea.setText(eld.displayInfo());
                     break;
                 default:
             }
@@ -192,21 +212,18 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText(""); 
                     break;
                 case 1: 
-                    AudioVisualMaterial monUni = new AudioVisualMaterial();
                     monUni.setTitle("Monsters University");
                     monUni.setAuthor("Pixar");
                     monUni.setYear(2013);
                     infoArea.setText(monUni.displayInfo()); 
                     break;
                 case 2: 
-                    AudioVisualMaterial theAven = new AudioVisualMaterial();
                     theAven.setTitle("The Avengers");
                     theAven.setAuthor("Marvel");
                     theAven.setYear(2012);
                     infoArea.setText(theAven.displayInfo()); 
                     break;
                 case 3: 
-                    AudioVisualMaterial theGG = new AudioVisualMaterial();
                     theGG.setTitle("The Great Gatsby");
                     theGG.setAuthor("");
                     theGG.setYear(2013);
@@ -222,6 +239,7 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText("");
                     break;
                 case 1:
+                    
                     
                     break;
                 case 2:
@@ -243,7 +261,7 @@ public class Librarian extends javax.swing.JFrame {
      * @param evt the event
      */
     private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
-        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Texas Home Owners", "Book 2", "Book 3" }));
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Texas Home Owners", "Harry Potter", "Eldest" }));
     }//GEN-LAST:event_bookRadioActionPerformed
 
     /**
