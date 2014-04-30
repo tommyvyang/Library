@@ -16,6 +16,9 @@ public abstract class LibraryMaterial {
     private String bookTitle;
     private double bookPrice;
     private int publicationYear;
+    private String bookType;
+    private int printEdit;
+    private int numPage;
     
     /**
      * Default Constructor
@@ -29,12 +32,18 @@ public abstract class LibraryMaterial {
      * @param title The title of the library item
      * @param price The price of the library item
      * @param year The year of publication of the library item
+     * @param bType
+     * @param nPage
+     * @param pEdit
      */
-    public LibraryMaterial(String author, String title, double price, int year) {
+    public LibraryMaterial(String author, String title, double price, int year, String bType, int nPage, int pEdit ) {
         author = bookAuthor;
         title = bookTitle;
         price = bookPrice;
         year = publicationYear;
+        bookType = bType;
+        numPage = nPage;
+        printEdit = pEdit;
     }
     
     /**
@@ -105,8 +114,60 @@ public abstract class LibraryMaterial {
      *  
      * @return 
      */
+    
+    public String getbkType()
+    {
+        return bookType;
+    }
+    
+    /**
+     * Sets book type
+     * @param bkType 
+     */
+    public void setbkType(String bkType)
+    {
+        bookType = bkType;
+    }
+    
+    /**
+     * Gets book edition
+     * @return printEdit
+     */
+    public int getbkEdition()
+    {
+        return printEdit;
+        
+    }
+    
+    /**
+     * Sets book edition
+     * @param bkEdition 
+     */
+    public void setbkEdition(int bkEdition)
+    {
+        printEdit = bkEdition;
+    }
+    
+    /**
+     * Gets book page number
+     * @return numPage
+     */
+    public int getbkPage()
+    {
+        return numPage;
+    }
+    
+    /**
+     * Sets book page number
+     * @param bkPage 
+     */
+    public void setbkPage(int bkPage)
+    {
+        numPage = bkPage;
+    }
     public String displayInfo() {
-        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor());
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " +  getYear() + "\n\nBook Edition: " + getbkEdition() + "\n\nBook Type: " + getbkType()+
+                "\n\nPages: "+ getbkPage() +"\n\nPrice: " + getPrice());
     }
     
 }
