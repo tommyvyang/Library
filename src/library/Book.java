@@ -9,6 +9,8 @@ package library;
 /**
  *
  * @author Tenzin Dhargye
+ * Concept#3 Inheritance
+ * Concept#1 Encapsulation/Data hiding
  */
 public class Book extends LibraryMaterial{
     private String bookType;
@@ -18,6 +20,7 @@ public class Book extends LibraryMaterial{
     
     /**
      * Default constructor
+     * Concept#2 Default constructor
      */
     public Book(){
     }
@@ -47,6 +50,7 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book type
      * @return bookType
+     * Concept#6 Method overriding
      */
     @Override
     public String getbkType()
@@ -57,6 +61,7 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book type
      * @param bkType 
+     * Concept#6 Method overriding
      */
     @Override
     public void setbkType(String bkType)
@@ -67,6 +72,7 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book edition
      * @return printEdit
+     * Concept#6 Method overriding
      */
     @Override
     public int getbkEdition()
@@ -78,6 +84,7 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book edition
      * @param bkEdition 
+     * Concept#6 Method overriding
      */
     @Override
     public void setbkEdition(int bkEdition)
@@ -88,6 +95,7 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book page number
      * @return numPage
+     * Concept#6 Method overriding
      */
     @Override
     public int getbkPage()
@@ -98,6 +106,7 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book page number
      * @param bkPage 
+     * Concept#6 Method overriding
      */
     @Override
     public void setbkPage(int bkPage)
