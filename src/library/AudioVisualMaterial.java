@@ -95,6 +95,15 @@ public class AudioVisualMaterial extends LibraryMaterial
     {
         avSound.start();
     }
+        
+        public void stopSound()
+    {
+        if(avSound != null){
+            avSound.stop();
+            avSound.flush();
+            avSound.close();
+        }
+    }
     
     /**
      * Sets the sound of the audio and visual material.
