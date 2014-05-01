@@ -9,6 +9,8 @@ package library;
 import java.applet.AudioClip;
 import java.awt.Image;
 import javax.sound.sampled.Clip;
+import javax.swing.ImageIcon;
+import javax.swing.Icon;
 
 /**
  * Audio and visual material Class
@@ -19,7 +21,7 @@ public class AudioVisualMaterial extends LibraryMaterial
 {
     
     protected String avType;
-    protected Image avCover;
+    protected Icon avCover;
     protected Clip avSound;
     
     /**
@@ -37,7 +39,7 @@ public class AudioVisualMaterial extends LibraryMaterial
      * @param _avCover AudioVisual cover
      * @param _avSound AudioVisual sound clip
      */
-    public AudioVisualMaterial (String _avType, Image _avCover, Clip _avSound)
+    public AudioVisualMaterial (String _avType, Icon _avCover, Clip _avSound)
     {
         avType = _avType;
         avCover = _avCover;
@@ -66,7 +68,7 @@ public class AudioVisualMaterial extends LibraryMaterial
      * Displays the audio and visual materials cover. 
      * @return an image of the audio and visual material
      */
-    public Image displayCover ()
+    public Icon displayCover ()
     {
         return avCover;
     }
@@ -75,7 +77,7 @@ public class AudioVisualMaterial extends LibraryMaterial
      * Sets the cover of the audio and visual material.
      * @param _cover the cover image
      */
-    public void setCover (Image _cover)
+    public void setCover (Icon _cover)
     {
         avCover = _cover;
     }
@@ -83,8 +85,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     /**
      * Plays the audio and visual material sound clip.
      */
-    @Override
-    public void playSound ()
+        public void playSound ()
     {
         avSound.start();
     }
@@ -93,14 +94,15 @@ public class AudioVisualMaterial extends LibraryMaterial
      * Sets the sound of the audio and visual material.
      * @param _sound the sound clip
      */
-    @Override
-    public void setSound (Clip _sound)
+        public void setSound (Clip _sound)
     {
         avSound = _sound;
     }
     
     /**
      * Displays the audio and visual material info.
+     * Concept #6 Method Override
+     * @return String for results
      */
     @Override
     public String displayInfo ()

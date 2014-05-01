@@ -7,13 +7,14 @@
 package library;
 
 import java.applet.AudioClip;
-import java.awt.Image;
 import java.io.File;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
 import javax.sound.sampled.AudioSystem;
 import javax.sound.sampled.Clip;
 import javax.sound.sampled.DataLine;
+import javax.swing.ImageIcon;
+import javax.swing.Icon;
 
 /**
  *
@@ -21,21 +22,7 @@ import javax.sound.sampled.DataLine;
  */
 public class Librarian extends javax.swing.JFrame {
 
-    // test class by Kou
-//    Image avImage;
-//    AudioClip avAud;
-//    AudioVisualMaterial monUni = new AudioVisualMaterial("DVD", avImage, avAud);
-//    int[] intMaterial = new int[3];
-    
-//    public void testClassMethod()
-//    {
-//      for (int i : intMaterial)
-//      {
-//        avMat[i] = new AudioVisualMaterial("DVD", avImage[i], avAud[i] );
-//      }
-      
-//    }
-    // end of test class. delete whenever.
+//    ImageIcon mU = new ImageIcon("MonstersUniversity.jpg");
     
     /**
      * Creates new form Librarian
@@ -60,7 +47,8 @@ public class Librarian extends javax.swing.JFrame {
         bookRadio = new javax.swing.JRadioButton();
         dvdRadio = new javax.swing.JRadioButton();
         cdRadio = new javax.swing.JRadioButton();
-        jPanel1 = new javax.swing.JPanel();
+        imgPanel = new javax.swing.JPanel();
+        imgLabel = new javax.swing.JLabel();
         exitButton = new javax.swing.JButton();
 
         setDefaultCloseOperation(javax.swing.WindowConstants.EXIT_ON_CLOSE);
@@ -101,15 +89,15 @@ public class Librarian extends javax.swing.JFrame {
             }
         });
 
-        javax.swing.GroupLayout jPanel1Layout = new javax.swing.GroupLayout(jPanel1);
-        jPanel1.setLayout(jPanel1Layout);
-        jPanel1Layout.setHorizontalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 300, Short.MAX_VALUE)
+        javax.swing.GroupLayout imgPanelLayout = new javax.swing.GroupLayout(imgPanel);
+        imgPanel.setLayout(imgPanelLayout);
+        imgPanelLayout.setHorizontalGroup(
+            imgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 266, Short.MAX_VALUE)
         );
-        jPanel1Layout.setVerticalGroup(
-            jPanel1Layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 400, Short.MAX_VALUE)
+        imgPanelLayout.setVerticalGroup(
+            imgPanelLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
+            .addComponent(imgLabel, javax.swing.GroupLayout.DEFAULT_SIZE, 386, Short.MAX_VALUE)
         );
 
         exitButton.setText("Exit");
@@ -126,16 +114,16 @@ public class Librarian extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(39, 39, 39)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING, false)
-                    .addComponent(jScrollPane1)
                     .addGroup(layout.createSequentialGroup()
                         .addComponent(bookRadio)
-                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 41, Short.MAX_VALUE)
+                        .addGap(41, 41, 41)
                         .addComponent(dvdRadio)
-                        .addGap(38, 38, 38)
+                        .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 50, Short.MAX_VALUE)
                         .addComponent(cdRadio))
+                    .addComponent(jScrollPane1)
                     .addComponent(itemList, 0, javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 156, Short.MAX_VALUE)
-                .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 137, Short.MAX_VALUE)
+                .addComponent(imgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                 .addGap(77, 77, 77))
             .addGroup(javax.swing.GroupLayout.Alignment.TRAILING, layout.createSequentialGroup()
                 .addContainerGap(javax.swing.GroupLayout.DEFAULT_SIZE, Short.MAX_VALUE)
@@ -147,7 +135,7 @@ public class Librarian extends javax.swing.JFrame {
             .addGroup(layout.createSequentialGroup()
                 .addGap(53, 53, 53)
                 .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-                    .addComponent(jPanel1, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
+                    .addComponent(imgPanel, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                     .addGroup(layout.createSequentialGroup()
                         .addGroup(layout.createParallelGroup(javax.swing.GroupLayout.Alignment.BASELINE)
                             .addComponent(bookRadio)
@@ -157,7 +145,7 @@ public class Librarian extends javax.swing.JFrame {
                         .addComponent(itemList, javax.swing.GroupLayout.PREFERRED_SIZE, javax.swing.GroupLayout.DEFAULT_SIZE, javax.swing.GroupLayout.PREFERRED_SIZE)
                         .addGap(18, 18, 18)
                         .addComponent(jScrollPane1, javax.swing.GroupLayout.PREFERRED_SIZE, 300, javax.swing.GroupLayout.PREFERRED_SIZE)))
-                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 13, Short.MAX_VALUE)
+                .addPreferredGap(javax.swing.LayoutStyle.ComponentPlacement.RELATED, 27, Short.MAX_VALUE)
                 .addComponent(exitButton)
                 .addContainerGap())
         );
@@ -166,22 +154,25 @@ public class Librarian extends javax.swing.JFrame {
     }// </editor-fold>//GEN-END:initComponents
 
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
-        LibraryMaterial texas = new Book();
-        LibraryMaterial hP = new Book();
-        LibraryMaterial eld = new Book();
-        LibraryMaterial monUni = new AudioVisualMaterial();
-        LibraryMaterial theAven = new AudioVisualMaterial();
-        LibraryMaterial theGG = new AudioVisualMaterial();
-        LibraryMaterial light = new AudioVisualMaterial();
-        LibraryMaterial jukebox = new AudioVisualMaterial();
-        LibraryMaterial jane = new AudioVisualMaterial();
+        Icon mU = new ImageIcon(getClass().getResource("MonstersUniversity.jpg"));
+        Icon tA = new ImageIcon(getClass().getResource("avengers.jpg"));
+        Icon gG = new ImageIcon(getClass().getResource("GreatGatsby.jpg"));
+        Book texas = new Book();
+        Book hP = new Book();
+        Book eld = new Book();
+        AudioVisualMaterial monUni = new AudioVisualMaterial("DVD", mU, null);
+        AudioVisualMaterial theAven = new AudioVisualMaterial();
+        AudioVisualMaterial theGG = new AudioVisualMaterial();
+        AudioVisualMaterial light = new AudioVisualMaterial();
+        AudioVisualMaterial jukebox = new AudioVisualMaterial();
+        AudioVisualMaterial jane = new AudioVisualMaterial();
         
         File jM, bM, m5;
             AudioInputStream stream;
             AudioFormat format;
             DataLine.Info info;
             Clip johnM,bruno,maroon;
-            
+
         
         if(bookRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()){
@@ -231,18 +222,33 @@ public class Librarian extends javax.swing.JFrame {
                     monUni.setTitle("Monsters University");
                     monUni.setAuthor("Pixar");
                     monUni.setYear(2013);
+ //                   monUni.setCover(mU);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(monUni.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(monUni.displayInfo()); 
                     break;
                 case 2: 
                     theAven.setTitle("The Avengers");
                     theAven.setAuthor("Marvel");
                     theAven.setYear(2012);
+                    theAven.setCover(tA);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(theAven.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(theAven.displayInfo()); 
                     break;
                 case 3: 
                     theGG.setTitle("The Great Gatsby");
                     theGG.setAuthor("");
                     theGG.setYear(2013);
+                    theGG.setCover(gG);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(theGG.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(theGG.displayInfo());
                     break;
                 default: 
@@ -387,9 +393,10 @@ public class Librarian extends javax.swing.JFrame {
     private javax.swing.JRadioButton cdRadio;
     private javax.swing.JRadioButton dvdRadio;
     private javax.swing.JButton exitButton;
+    private javax.swing.JLabel imgLabel;
+    private javax.swing.JPanel imgPanel;
     private javax.swing.JTextArea infoArea;
     private javax.swing.JComboBox itemList;
-    private javax.swing.JPanel jPanel1;
     private javax.swing.JScrollPane jScrollPane1;
     // End of variables declaration//GEN-END:variables
 }

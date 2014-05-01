@@ -50,10 +50,8 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book type
      * @return bookType
-     * Concept#6 Method overriding
      */
-    @Override
-    public String getbkType()
+        public String getbkType()
     {
         return bookType;
     }
@@ -61,10 +59,8 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book type
      * @param bkType 
-     * Concept#6 Method overriding
      */
-    @Override
-    public void setbkType(String bkType)
+        public void setbkType(String bkType)
     {
         bookType = bkType;
     }
@@ -72,10 +68,8 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book edition
      * @return printEdit
-     * Concept#6 Method overriding
      */
-    @Override
-    public int getbkEdition()
+        public int getbkEdition()
     {
         return printEdit;
         
@@ -84,10 +78,8 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book edition
      * @param bkEdition 
-     * Concept#6 Method overriding
      */
-    @Override
-    public void setbkEdition(int bkEdition)
+        public void setbkEdition(int bkEdition)
     {
         printEdit = bkEdition;
     }
@@ -95,10 +87,8 @@ public class Book extends LibraryMaterial{
     /**
      * Gets book page number
      * @return numPage
-     * Concept#6 Method overriding
      */
-    @Override
-    public int getbkPage()
+        public int getbkPage()
     {
         return numPage;
     }
@@ -106,12 +96,21 @@ public class Book extends LibraryMaterial{
     /**
      * Sets book page number
      * @param bkPage 
-     * Concept#6 Method overriding
      */
-    @Override
-    public void setbkPage(int bkPage)
+        public void setbkPage(int bkPage)
     {
         numPage = bkPage;
+    }
+    
+    /**
+     * 
+     * Concept #6 Method Override
+     * @return String for results
+     */
+    @Override
+    public String displayInfo() {
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " +  getYear() + "\n\nBook Edition: " + getbkEdition() + "\n\nBook Type: " + getbkType()+
+                "\n\nPages: "+ getbkPage() +"\n\nPrice: " + getPrice());
     }
 }
 
