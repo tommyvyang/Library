@@ -12,7 +12,7 @@ import javax.swing.Icon;
 /**
  * Audio and visual material Class
  * Concept #8: Polymorphism
- *
+ * Concept #3: Protected Visibility Modifier
  * @author Kou Xiong
  */
 public class AudioVisualMaterial extends LibraryMaterial
