@@ -125,7 +125,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     @Override
     public String displayInfo ()
     {
-        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nPrice: " + getPrice() + "\n\nYear: " + getYear());
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nPrice: $" + getPrice() + "\n\nYear: " + getYear());
     }
     
 }

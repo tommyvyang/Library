@@ -157,7 +157,7 @@ public class Book extends LibraryMaterial{
     @Override
     public String displayInfo() {
         return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " +  getYear() + "\n\nBook Edition: " + getbkEdition() + "\n\nBook Type: " + getbkType()+
-                "\n\nPages: "+ getbkPage() +"\n\nPrice: " + getPrice());
+                "\n\nPages: "+ getbkPage() +"\n\nPrice: $" + getPrice());
     }
 }
 
