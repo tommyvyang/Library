@@ -96,6 +96,9 @@ public class AudioVisualMaterial extends LibraryMaterial
         avSound.start();
     }
         
+        /**
+         * Stops the audio from playing
+         */
         public void stopSound()
     {
         if(avSound != null){
