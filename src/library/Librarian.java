@@ -40,6 +40,19 @@ public class Librarian extends javax.swing.JFrame {
             AudioFormat format;
             DataLine.Info info;
             Clip johnM,bruno,maroon;
+            
+    Book texas = new Book();
+    Book hP = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 6.59, 1999, 1);
+    Book eld = new Book("Eldest", "Christopher Paolini", 16.72, 2005, "Hardcover", 3, 704);
+        
+    AudioVisualMaterial monUni = new AudioVisualMaterial("Pixar", "Monsters University", 14.99, 2013, "DVD", mUni, null);
+    AudioVisualMaterial theAven = new AudioVisualMaterial();
+    AudioVisualMaterial theGG = new AudioVisualMaterial();
+        
+    AudioVisualMaterial light = new AudioVisualMaterial("John Mayer", "Where The Light Is", 5.87, 2008, "CD", johnMayer, johnM);
+    AudioVisualMaterial jukebox = new AudioVisualMaterial();
+    AudioVisualMaterial jane = new AudioVisualMaterial();
+        
     
     /**
      * Creates new form Librarian
@@ -176,17 +189,6 @@ public class Librarian extends javax.swing.JFrame {
      */
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
         
-        Book texas = new Book();
-        Book hP = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 6.59, 1999, 1);
-        Book eld = new Book("Eldest", "Christopher Paolini", 16.72, 2005, "Hardcover", 3, 704);
-        
-        AudioVisualMaterial monUni = new AudioVisualMaterial("Pixar", "Monsters University", 14.99, 2013, "DVD", mUni, null);
-        AudioVisualMaterial theAven = new AudioVisualMaterial();
-        AudioVisualMaterial theGG = new AudioVisualMaterial();
-        
-        AudioVisualMaterial light = new AudioVisualMaterial("John Mayer", "Where The Light Is", 5.87, 2008, "CD", johnMayer, johnM);
-        AudioVisualMaterial jukebox = new AudioVisualMaterial();
-        AudioVisualMaterial jane = new AudioVisualMaterial();
         
         if(bookRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()){
@@ -271,6 +273,9 @@ public class Librarian extends javax.swing.JFrame {
         }
         
         if(cdRadio.isSelected() == true){
+            jukebox.stopSound();
+            jane.stopSound();
+            light.stopSound();
             switch(itemList.getSelectedIndex()){
                 case 0:
                     infoArea.setText("");
