@@ -7,7 +7,8 @@
 package library;
 
 /**
- *
+ * Main class
+ * 
  * @author Tommy Yang
  */
 public class Library {

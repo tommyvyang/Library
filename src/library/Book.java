@@ -6,16 +6,21 @@
 
 package library;
 
+import javax.swing.Icon;
+
 /**
  *
  * @author Tenzin Dhargye
- * Concept#3 Inheritance
- * Concept#1 Encapsulation/Data hiding
+ * Concept #8: Polymorphism
+ * Concept #3: Inheritance
+ * Concept #1: Encapsulation/Data hiding
  */
 public class Book extends LibraryMaterial{
     private String bookType;
     private int printEdit;
+    private String printEdition;
     private int numPage;
+    private Icon bookCover;
     
     
     /**
@@ -27,12 +32,20 @@ public class Book extends LibraryMaterial{
     
     /**
      * Non default constructor
-     * @param bType
-     * @param pEdit
-     * @param nPage 
+     * Concept #5: Super reference
+     * 
+     * @param author Author
+     * @param title Title
+     * @param price Price
+     * @param year Year published
+     * @param bType Book type
+     * @param pEdit Print edition
+     * @param nPage Number of pages
      */
-    public Book(String bType, int pEdit, int nPage)
+    public Book(String author, String title, double price, int year, String bType, int pEdit, int nPage)
     {
+        
+        super (author, title, price, year);
         bookType = bType;
         numPage = nPage;
         printEdit = pEdit;
@@ -40,11 +53,16 @@ public class Book extends LibraryMaterial{
     
     /**
      * first Edition book constructor
+     * @param author
+     * @param title
+     * @param price
+     * @param year
      * @param firstEdit 
      */
-    public Book(int firstEdit)
+    public Book(String author, String title, double price, int year, int firstEdit)
     {
-        
+        super (author, title, price, year);
+        printEdit = firstEdit;
     }
 
     /**
@@ -76,12 +94,23 @@ public class Book extends LibraryMaterial{
     }
     
     /**
-     * Sets book edition
+     * Sets book edition as an int
      * @param bkEdition 
      */
         public void setbkEdition(int bkEdition)
     {
         printEdit = bkEdition;
+    }
+        
+     /**
+     * Sets book edition as a string
+     * Concept #7: Method Overloading
+     * 
+     * @param bkEdition 
+     */
+        public void setbkEdition(String bkEdition)
+    {
+        printEdition = bkEdition;
     }
     
     /**
@@ -100,6 +129,24 @@ public class Book extends LibraryMaterial{
         public void setbkPage(int bkPage)
     {
         numPage = bkPage;
+    }
+        
+     /**
+     * Displays cover. 
+     * @return image of the cover
+     */
+    public Icon displayCover ()
+    {
+        return bookCover;
+    }
+    
+    /**
+     * Sets the cover image
+     * @param cover the cover image
+     */
+    public void setCover (Icon cover)
+    {
+        bookCover = cover;
     }
     
     /**

@@ -6,7 +6,6 @@
 
 package library;
 
-import java.applet.AudioClip;
 import java.io.File;
 import javax.sound.sampled.AudioFormat;
 import javax.sound.sampled.AudioInputStream;
@@ -17,12 +16,30 @@ import javax.swing.ImageIcon;
 import javax.swing.Icon;
 
 /**
- *
- * @author Tommy
+ * This class contains the GUI as well as interacts with the user
+ * 
+ * @author Tommy Yang, Thomas Le, Kou Xiong, Tenzin Dhargye
  */
 public class Librarian extends javax.swing.JFrame {
 
-//    ImageIcon mU = new ImageIcon("MonstersUniversity.jpg");
+    //declarations and initializations
+    Icon tex= new ImageIcon(getClass().getResource("texas.jpg"));
+    Icon harrypotter = new ImageIcon(getClass().getResource("harrypotter.jpg"));
+    Icon eldest = new ImageIcon(getClass().getResource("eldest.jpg"));
+    
+    Icon mUni = new ImageIcon(getClass().getResource("MonstersUniversity.jpg"));
+    Icon tAven = new ImageIcon(getClass().getResource("avengers.jpg"));
+    Icon gGats = new ImageIcon(getClass().getResource("GreatGatsby.jpg"));
+        
+    Icon johnMayer= new ImageIcon(getClass().getResource("john mayer.jpg"));
+    Icon brunoMars= new ImageIcon(getClass().getResource("bruno.jpg"));
+    Icon maroon5= new ImageIcon(getClass().getResource("maroon 5.jpg"));
+    
+    File jM, bM, m5;
+            AudioInputStream stream;
+            AudioFormat format;
+            DataLine.Info info;
+            Clip johnM,bruno,maroon;
     
     /**
      * Creates new form Librarian
@@ -153,26 +170,23 @@ public class Librarian extends javax.swing.JFrame {
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    /**
+     * Displays information, item cover, and possibly sounds for the selected item
+     * @param evt the event
+     */
     private void itemListActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_itemListActionPerformed
-        Icon mU = new ImageIcon(getClass().getResource("MonstersUniversity.jpg"));
-        Icon tA = new ImageIcon(getClass().getResource("avengers.jpg"));
-        Icon gG = new ImageIcon(getClass().getResource("GreatGatsby.jpg"));
+        
         Book texas = new Book();
-        Book hP = new Book();
-        Book eld = new Book();
-        AudioVisualMaterial monUni = new AudioVisualMaterial("DVD", mU, null);
+        Book hP = new Book("Harry Potter and the Sorcerer's Stone", "J.K. Rowling", 6.59, 1999, 1);
+        Book eld = new Book("Eldest", "Christopher Paolini", 16.72, 2005, "Hardcover", 3, 704);
+        
+        AudioVisualMaterial monUni = new AudioVisualMaterial("Pixar", "Monsters University", 14.99, 2013, "DVD", mUni, null);
         AudioVisualMaterial theAven = new AudioVisualMaterial();
         AudioVisualMaterial theGG = new AudioVisualMaterial();
-        AudioVisualMaterial light = new AudioVisualMaterial();
+        
+        AudioVisualMaterial light = new AudioVisualMaterial("John Mayer", "Where The Light Is", 5.87, 2008, "CD", johnMayer, johnM);
         AudioVisualMaterial jukebox = new AudioVisualMaterial();
         AudioVisualMaterial jane = new AudioVisualMaterial();
-        
-        File jM, bM, m5;
-            AudioInputStream stream;
-            AudioFormat format;
-            DataLine.Info info;
-            Clip johnM,bruno,maroon;
-
         
         if(bookRadio.isSelected() == true) {
             switch(itemList.getSelectedIndex()){
@@ -186,27 +200,30 @@ public class Librarian extends javax.swing.JFrame {
                     texas.setbkEdition(2);
                     texas.setbkType("Paperback");
                     texas.setbkPage(822);
-                    texas.setPrice(37.74);                   
+                    texas.setPrice(37.74);  
+                    texas.setCover(tex);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(texas.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(texas.displayInfo());
                     break;
                 case 2:
-                    hP.setTitle("Harry Potter and the Sorcerer's Stone");
-                    hP.setAuthor("J.K. Rowling");
-                    hP.setYear(1999);
-                    hP.setbkEdition(1);
                     hP.setbkType("Paperback");
                     hP.setbkPage(320);
-                    hP.setPrice(6.59);
+                    hP.setCover(harrypotter);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(hP.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(hP.displayInfo());
                     break;
                 case 3:
-                    eld.setTitle("Eldest");
-                    eld.setAuthor("Christopher Paolini");
-                    eld.setYear(2005);
-                    eld.setbkEdition(3);
-                    eld.setbkType("Hardcover");
-                    eld.setbkPage(704);
-                    eld.setPrice(16.72);
+                    eld.setCover(eldest);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(eld.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(eld.displayInfo());
                     break;
                 default:
@@ -219,10 +236,6 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText(""); 
                     break;
                 case 1: 
-                    monUni.setTitle("Monsters University");
-                    monUni.setAuthor("Pixar");
-                    monUni.setYear(2013);
- //                   monUni.setCover(mU);
                     imgLabel.removeAll();
                     imgLabel.setIcon(monUni.displayCover());
                     imgLabel.validate();
@@ -232,8 +245,9 @@ public class Librarian extends javax.swing.JFrame {
                 case 2: 
                     theAven.setTitle("The Avengers");
                     theAven.setAuthor("Marvel");
+                    theAven.setPrice(14.99);
                     theAven.setYear(2012);
-                    theAven.setCover(tA);
+                    theAven.setCover(tAven);
                     imgLabel.removeAll();
                     imgLabel.setIcon(theAven.displayCover());
                     imgLabel.validate();
@@ -242,9 +256,10 @@ public class Librarian extends javax.swing.JFrame {
                     break;
                 case 3: 
                     theGG.setTitle("The Great Gatsby");
-                    theGG.setAuthor("");
+                    theGG.setAuthor("Warner Bros");
+                    theGG.setPrice(8.96);
                     theGG.setYear(2013);
-                    theGG.setCover(gG);
+                    theGG.setCover(gGats);
                     imgLabel.removeAll();
                     imgLabel.setIcon(theGG.displayCover());
                     imgLabel.validate();
@@ -261,9 +276,11 @@ public class Librarian extends javax.swing.JFrame {
                     infoArea.setText("");
                     break;
                 case 1:
-                    light.setTitle("Where The Light Is");
-                    light.setAuthor("John Mayer");
-                    light.setYear(2008);
+                    light.setCover(johnMayer);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(light.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(light.displayInfo());
                     try {
                         stream = AudioSystem.getAudioInputStream(new File("src//library//Bold As Love.wav"));
@@ -281,7 +298,13 @@ public class Librarian extends javax.swing.JFrame {
                 case 2:
                     jukebox.setTitle("Unorthodox Jukebox");
                     jukebox.setAuthor("Bruno Mars");
+                    jukebox.setPrice(11.88);
                     jukebox.setYear(2012);
+                    jukebox.setCover(brunoMars);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(jukebox.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(jukebox.displayInfo());
                     try {
                         stream = AudioSystem.getAudioInputStream(new File("src//library//Locked Out Of Heaven.wav"));
@@ -299,7 +322,13 @@ public class Librarian extends javax.swing.JFrame {
                 case 3:
                     jane.setTitle("Songs About Jane");
                     jane.setAuthor("Maroon 5");
+                    jane.setPrice(7.99);
                     jane.setYear(2002);
+                    jane.setCover(maroon5);
+                    imgLabel.removeAll();
+                    imgLabel.setIcon(jane.displayCover());
+                    imgLabel.validate();
+                    imgLabel.repaint();
                     infoArea.setText(jane.displayInfo());
                     try {
                         stream = AudioSystem.getAudioInputStream(new File("src//library//Sunday Morning.wav"));
@@ -324,7 +353,7 @@ public class Librarian extends javax.swing.JFrame {
      * @param evt the event
      */
     private void bookRadioActionPerformed(java.awt.event.ActionEvent evt) {//GEN-FIRST:event_bookRadioActionPerformed
-        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Texas Home Owners", "Harry Potter", "Eldest" }));
+        itemList.setModel(new javax.swing.DefaultComboBoxModel(new String[] { "Select a Book", "Texas Homeowners Association Law", "Harry Potter and the Sorcerer's Stone", "Eldest" }));
     }//GEN-LAST:event_bookRadioActionPerformed
 
     /**

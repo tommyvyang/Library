@@ -6,14 +6,12 @@
 
 package library;
 
-import java.applet.AudioClip;
-import java.awt.Image;
 import javax.sound.sampled.Clip;
-import javax.swing.ImageIcon;
 import javax.swing.Icon;
 
 /**
  * Audio and visual material Class
+ * Concept #8: Polymorphism
  *
  * @author Kou Xiong
  */
@@ -35,12 +33,20 @@ public class AudioVisualMaterial extends LibraryMaterial
     
     /**
      * Audio and visual material constructor.
+     * 
+     * Concept #5: Super reference
+     * 
+     * @param author Author/artist/studio
+     * @param title Title
+     * @param price Price
+     * @param year Year released
      * @param _avType AudioVisual type
      * @param _avCover AudioVisual cover
      * @param _avSound AudioVisual sound clip
      */
-    public AudioVisualMaterial (String _avType, Icon _avCover, Clip _avSound)
+    public AudioVisualMaterial (String author, String title, double price, int year, String _avType, Icon _avCover, Clip _avSound)
     {
+        super (author, title, price, year);
         avType = _avType;
         avCover = _avCover;
         avSound = _avSound;
@@ -107,7 +113,7 @@ public class AudioVisualMaterial extends LibraryMaterial
     @Override
     public String displayInfo ()
     {
-        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nYear: " + getYear());
+        return ("Title: " + getTitle() + "\n\nAuthor: " + getAuthor() + "\n\nPrice: " + getPrice() + "\n\nYear: " + getYear());
     }
     
 }

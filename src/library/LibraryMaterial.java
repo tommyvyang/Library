@@ -8,7 +8,8 @@ package library;
 
 
 /**
- *
+ * Super class used to store information on library materials
+ * Concept #1: Enscapulation/Data Hiding
  * @author Tommy Yang
  */
 public abstract class LibraryMaterial {
@@ -25,6 +26,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
+     * Concept #2: Non-Default Constructor
      * 
      * @param author The author of the library item
      * @param title The title of the library item
@@ -32,14 +34,14 @@ public abstract class LibraryMaterial {
      * @param year The year of publication of the library item
      */
     public LibraryMaterial(String author, String title, double price, int year) {
-        author = bookAuthor;
-        title = bookTitle;
-        price = bookPrice;
-        year = publicationYear;
+        bookAuthor = author;
+        bookTitle = title;
+        bookPrice = price;
+        publicationYear = year;
     }
     
     /**
-     * 
+     * Gets the author of the item
      * @return Author of the library item
      */
     public String getAuthor() {
@@ -47,7 +49,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Gets the title of the item
      * @return Title of library item
      */
     public String getTitle() {
@@ -55,7 +57,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Gets the price of the item
      * @return Price of library item
      */
     public double getPrice() {
@@ -63,7 +65,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Gets the year released/published
      * @return Publication Year of library item
      */
     public int getYear() {
@@ -71,7 +73,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Sets the author/artist/studio
      * @param author
      */
     public void setAuthor(String author) {
@@ -79,7 +81,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Sets the title of the item
      * @param title
      */
     public void setTitle(String title) {
@@ -87,7 +89,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Sets the year published/released of item
      * @param year
      */
     public void setYear(int year) {
@@ -95,7 +97,7 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * 
+     * Sets price of item
      * @param price
      */
     public void setPrice(double price) {
@@ -103,8 +105,8 @@ public abstract class LibraryMaterial {
     }
     
     /**
-     * Abstract method for information
-     * @return 
+     * Abstract method for String of displayed information overridden by subclasses
+     * @return String of information
      */
     public abstract String displayInfo();
     
